@@ -2,52 +2,24 @@
 
 ## Database creating and restoring with Docker
 
-mypc >> docker run --name postgresCont -p 5432:5432 -e POSTGRES_PASSWORD=12345 -d postgres
+mypc >> docker run --name mysql-cont -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345 -d mysql
 
 <br/>
 
-mypc >> docker cp /path/mytestDb.tar postgresCont:/home/mytestDb.tar
+mypc >> docker cp /path/sampledb.sql mysql-cont:/home/
 
 <br/>
 
-mypc >> docker exec -it postgresCont bash
+mypc >> docker exec -it mysql-cont bash
 
 <hr/>
 
-container=# psql --username=postgres (--host=localhost --port=5432 --dbname=mytestDb)
+mysql>> source /home/sampledb.sql
 
 <hr/>
 
-postgres=# CREATE DATABASE mytestDb;
+mysql>> show databases;
 
 <br/>
 
-postgres=# exit
-
-<hr/>
-
-container=# pg_restore --username=postgres --dbname=mytestDb --verbose '/home/mytestDb.tar'
-
-<br/>
-
-container=# rm -rf /home/mytestDb.tar
-
-<br/>
-
-container=# psql --username=postgres
-
-<hr/>
-
-postgres=# \l
-
-<br/>
-
-postgres=# \c mytestDb
-
-<br/>
-
-mytestDb=# \dt (\dt+)
-
-<br/>
-
-mytestDb=# \! clear
+mysql>> exit
