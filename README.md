@@ -14,6 +14,10 @@ mypc >> docker exec -it mysql-cont bash
 
 <hr/>
 
+container>> mysql -u root -p
+
+<hr/>
+
 mysql>> source /home/sampledb.sql
 
 <hr/>

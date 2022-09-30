@@ -6,7 +6,6 @@ mypc >> docker exec -it mysql-cont bash
 container>> mysql -u root -p
 
 
-
 mysql>> source /home/sampledb.sql
 
 mysql>> show databases;
