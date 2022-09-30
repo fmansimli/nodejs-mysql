@@ -13,3 +13,4 @@ mysql>> show databases;
 
 mysql>> exit
 
+container>> rm -rf /home/sampledb.sql
