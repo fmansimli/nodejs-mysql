@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS users_projects (
 --     postId INT NOT NULL REFERENCES posts (id) ON DELETE CASCADE,
 --     commentId INT NOT NULL REFERENCES posts (id) ON DELETE CASCADE,
 --     CHECK (COAlESCE((postId)::BOOLEAN::INTEGER, 0) + COAlESCE((commentId)::BOOLEAN::INTEGER, 0) = 1),
-        UNIQUE (userId, postId, commentId)
+--     UNIQUE (userId, postId, commentId)
 -- );
 
 
